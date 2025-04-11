@@ -22,11 +22,13 @@ from routes.auth_routes import auth_bp
 from routes.product_routes import product_bp
 from routes.stock_routes import stock_bp
 from routes.report_routes import report_bp
+from routes.pos_routes import pos_bp
 
 app.register_blueprint(auth_bp, url_prefix='/auth')
 app.register_blueprint(product_bp, url_prefix='/products')
 app.register_blueprint(stock_bp, url_prefix='/stock')
-app.register_blueprint(report_bp, url_prefix='/stock')
+app.register_blueprint(report_bp, url_prefix='/reports')
+app.register_blueprint(pos_bp, url_prefix='/pos')
 
 # Iniciar servidor
 if __name__ == '__main__':

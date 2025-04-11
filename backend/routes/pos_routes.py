@@ -1,8 +1,10 @@
-from flask import request, jsonify
+from flask import Blueprint, request, jsonify
 from app import db
 from models import Product, StockHistory, Sale
 
-@app.route('/sales', methods=['POST'])
+pos_bp = Blueprint('pos', __name__)
+
+@pos_bp.route('/sales', methods=['POST'])
 def register_sale():
     data = request.get_json()
     products = data.get('products', [])
