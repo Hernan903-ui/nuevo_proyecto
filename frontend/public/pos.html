@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punto de Venta</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/js/pos.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Punto de Venta</h1>
+        <nav>
+            <a href="/dashboard.html">Volver al Dashboard</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Realizar Venta</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody id="pos-table">
+                <!-- Se llena dinámicamente con JavaScript -->
+            </tbody>
+        </table>
+        <button onclick="finalizeSale()">Finalizar Venta</button>
+    </main>
+</body>
+</html>

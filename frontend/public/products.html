@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Productos</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/js/product.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Gestión de Productos</h1>
+        <nav>
+            <a href="/dashboard.html">Volver al Dashboard</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Lista de Productos</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nombre</th>
+                    <th>Precio Costo</th>
+                    <th>Precio Venta</th>
+                    <th>Stock</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="product-table">
+                <!-- Se llena dinámicamente con JavaScript -->
+            </tbody>
+        </table>
+        <button onclick="fetchProducts()">Actualizar Lista</button>
+    </main>
+</body>
+</html>

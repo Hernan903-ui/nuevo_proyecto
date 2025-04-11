@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <script src="/js/reports.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Análisis de Ventas</h1>
+        <nav>
+            <a href="/dashboard.html">Volver al Dashboard</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Gráfico de Ventas</h2>
+        <canvas id="salesChart"></canvas>
+        <button onclick="generateSalesReport()">Generar Análisis</button>
+        <button onclick="downloadPDF()">Descargar Reporte PDF</button>
+    </main>
+</body>
+</html>

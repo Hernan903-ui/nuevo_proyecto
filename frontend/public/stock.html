@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Stock</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/js/stock.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Control de Stock</h1>
+        <nav>
+            <a href="/dashboard.html">Volver al Dashboard</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Productos con Bajo Stock</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Stock</th>
+                </tr>
+            </thead>
+            <tbody id="low-stock-table">
+                <!-- Se llena dinámicamente con JavaScript -->
+            </tbody>
+        </table>
+        <button onclick="fetchLowStock()">Actualizar Lista</button>
+    </main>
+</body>
+</html>
