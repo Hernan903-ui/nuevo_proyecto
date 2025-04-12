@@ -5,16 +5,30 @@ import logging
 from database import init_database, db
 from flask import jsonify, request
 from models import Product
+from utils.mail import init_mail
+from flask_socketio import SocketIO
+
 
 # Configuración de Flask
 app = Flask(__name__)
 init_database(app)
+# Inicializar Flask-Mail
+init_mail(app)
 CORS(app)
+# Inicializar Flask-SocketIO
+socketio = SocketIO(app, cors_allowed_origins="*")
+
+# Ejemplo de evento de conexión
+@socketio.on('connect')
+def handle_connect():
+    print("Cliente conectado")
 
 # Configuración de la base de datos
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://user:password@localhost/inventory_db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
+
+
 
 @app.route('/api/products', methods=['GET'])
 def get_products():
@@ -56,4 +70,4 @@ app.register_blueprint(pos_bp, url_prefix='/pos')
 
 # Iniciar servidor
 if __name__ == '__main__':
-    app.run(debug=True)
+    socketio.run(app, debug=True)

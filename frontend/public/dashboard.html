@@ -6,9 +6,12 @@
     <title>Dashboard</title>
     <link rel="stylesheet" href="/css/styles.css">
     <script src="/js/utils.js" defer></script>
+    <script src="/js/socket.js" defer></script>
 </head>
 <body>
     <header>
+        <h1 data-i18n="header.title">Welcome to the Dashboard</h1>
+        <p data-i18n="content.greeting">Hello, User!</p>
         <h1>Dashboard</h1>
         <nav>
             <a href="/products.html">Productos</a>
@@ -23,5 +26,19 @@
         <h2>Bienvenido al Dashboard</h2>
         <p>Selecciona una opción del menú para comenzar.</p>
     </main>
+    <div id="notifications"></div>
 </body>
 </html>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const role = getRoleFromToken();
+        if (role !== 'admin') {
+            document.getElementById('admin-section').style.display = 'none';
+        }
+    });
+</script>
+
+<div id="admin-section">
+    <h2>Sección Administrativa</h2>
+    <button>Configurar Usuarios</button>
+</div>
