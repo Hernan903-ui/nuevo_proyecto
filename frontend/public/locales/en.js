@@ -6,4 +6,5 @@
     "content": {
       "greeting": "Hello, User!"
     }
-  }
+}
+export default translations;

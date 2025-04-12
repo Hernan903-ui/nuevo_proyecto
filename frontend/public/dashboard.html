@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="/css/styles.css">
     <script src="/js/utils.js" defer></script>
     <script src="/js/socket.js" defer></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="/js/dashboard.js" defer></script>
+    <img src="image.jpg" alt="Descripción" loading="lazy">
 </head>
 <body>
     <header>
@@ -24,7 +27,11 @@
     </header>
     <main>
         <h2>Bienvenido al Dashboard</h2>
-        <p>Selecciona una opción del menú para comenzar.</p>
+    <p>Selecciona una opción del menú para comenzar.</p>
+
+    <!-- Contenedores para los gráficos -->
+    <div id="total-sales-chart" style="width: 100%; height: 400px;"></div>
+    <div id="best-sellers-chart" style="width: 100%; height: 400px;"></div>
     </main>
     <div id="notifications"></div>
 </body>

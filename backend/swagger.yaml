@@ -1,0 +1,30 @@
+swagger: "2.0"
+info:
+  title: "API de Productos"
+  description: "Documentación de la API para gestionar productos"
+  version: "1.0.0"
+host: "localhost:5000"
+schemes:
+  - "http"
+paths:
+  /api/products:
+    get:
+      summary: "Obtener lista de productos"
+      responses:
+        200:
+          description: "Lista de productos obtenida correctamente"
+    post:
+      summary: "Crear un nuevo producto"
+      parameters:
+        - in: "body"
+          name: "body"
+          required: true
+          schema:
+            type: "object"
+            properties:
+              name:
+                type: "string"
+                example: "Producto A"
+      responses:
+        201:
+          description: "Producto creado exitosamente"
